@@ -1,0 +1,39 @@
+\subsection{Proposed procedure}
+Once $\rho \geq 0$ is fixed, let $\lambda_{\rho}^*$ be the optimal solution of the restricted\footnote[1]{\textit{Restricted} implies the use of the restricted resource array $\bar{b} = b - \rho$. \label{fn:restriction}} version of \ref{eq:dual} , and let $v(\lambda_{\rho}^*)$ be the corresponding solution of \ref{eq:inner} with $\lambda = \lambda_{\rho}^*$. Moreover, let $v_{\rho}^{LP}$ be the solution of the restricted\footnotemark[1] version of \ref{eq:LP}.\\
+Manipulating the global constraint through addition and subtraction of the same quantity and rearrangement, we get:
+\begin{align*}
+    \sum_{p = 1}^m A_p v_p(\lambda_{\rho}^*) = \sum_{p = 1}^m A_p v_{p, \rho}^{LP} + \sum_{p = 1}^m A_p (v_p(\lambda_{\rho}^*) - v_{p, \rho}^{LP}).
+\end{align*}
+Since $v_\rho^{LP}$ satisfies:
+\begin{align}
+    \sum_{p = 1}^m A_p v_{p, \rho}^{LP} \leq b - \rho, \label{eq:v_LP_ub}
+\end{align} 
+it is possible to derive the following upper bound:
+\begin{align*}
+    \sum_{p = 1}^m A_p v_p(\lambda_{\rho}^*) \leq b - \rho + \sum_{p = 1}^m A_p (v_p(\lambda_{\rho}^*) - v_{p, \rho}^{LP}).
+\end{align*}
+The coupling constraint of \ref{eq:MILP} is satisfied for sure if we choose:
+\begin{align*}
+    b - \rho + \sum_{p = 1}^m A_p (v_p(\lambda_{\rho}^*) - v_{p, \rho}^{LP}) \leq b,
+\end{align*}
+resulting in the following sufficient condition on $\rho$:
+\begin{align*}
+    \rho \geq \sum_{p = 1}^m A_p (v_p(\lambda_{\rho}^*) - v_{p, \rho}^{LP}).
+\end{align*}
+From this, the authors derive a less conservative update law for $\rho$:
+\begin{align}
+    \rho(k) = \left[ \sum_{p = 1}^m A_p (v_p(\lambda_{\rho(k-1)}^*) - v_{p, \rho(k-1)}^{LP}) \right]_+, \label{eq:rho_update}
+\end{align}
+which is always positive in order to prevent any virtual broadening of the shared resources.\\
+The authors also propose an algorithm (\textit{Algorithm 2}\supercite{manieri}) that, given $\rho$ as input, is able to return an estimate of $v_\rho^{LP}$ and the value of $v(\lambda_\rho^*)$.
+
+\ref{eq:rho_update}, together with \ref{eq:v_LP_ub}, implies that $\rho(k)$ satisfies:
+\begin{align*}
+    \rho(k) &\geq \sum_{p = 1}^m A_p (v_p(\lambda_{\rho(k-1)}^*) - v_{p, \rho(k-1)}^{LP})\\
+    &\geq \rho(k) + \sum_{p = 1}^m A_p v_p (\lambda^*_{\rho(k-1)} - b).
+\end{align*}
+Let $w(h) = \sum_{p = 1}^m A_p v_p (\lambda^*_{\rho(k-1)} - b)$ be the violation vector. From the previous inequality, it follows that:
+\begin{align*}
+    \rho(k) \geq \rho(0) + \sum_{h = 0}^{k-1} w(h).
+\end{align*}
+Note that, because of the boundedness of the local constraint sets $V_p$, the sequence of $\rho(k)$ is bounded as well. This implies that each component of $w(h)$ must become negative sooner or later. Therefore, a feasible solution is certainly found when $\beta = 1$, while for $\beta > 1$ convergence is not guaranteed. Moreover, typically multiple mixed-integer solutions are admitted: this expectedly causes oscillations across iterations in the pursuit of a feasible solution. 

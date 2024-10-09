@@ -1,0 +1,22 @@
+\subsection{Problem formulation}
+\label{sec:dec_problem}
+\textbf{Inner minimization problem} \\
+The dual function is obtained by dualizing the coupling constraints (\ref{constr:c7}) and (\ref{constr:c13}) and by imposing $\mu_i +\nu_i \leq 1$,  as in \autocite{10194623}:
+\begin{gather*}
+    d(\lambda, \mu, \nu) = \sum_{p=1}^m min_{P_p} P_p(\xi_p + \lambda +\mu - \nu) + \\
+    - (\mu - \nu)P^{ref} - \lambda(P^{max} - \rho)
+\end{gather*}
+subject to the constraints (\ref{constr:c1})-(\ref{constr:c5}), (\ref{constr:c8})-(\ref{constr:c10}).
+
+The inner minimization problem is decomposed in $m$ decoupled subproblems, one for each PEV $p$, solvable in parallel. The optimal solution of the $p$-th subproblem is:
+\begin{gather}
+    P_p = \argmin_{P_p} P_p(\xi_p + \mu - \nu + \lambda) \label{eq:optimalPp}
+\end{gather} $$s.t. \quad (\ref{constr:c1})-(\ref{constr:c5}), (\ref{constr:c8})-(\ref{constr:c10})$$ \\
+\textbf{Outer minimization problem} \\
+Once the optimal solution of the inner minimization problem is found at the level of each PEV, the $m$ tentative charging schedules are shared to the central controller. The controller then updates the Lagrange multipliers accordingly to some decreasing step size $\alpha(k)$, chosen so as to satisfy the following conditions:
+\begin{gather*}
+    \lim_{k \to \infty} \alpha(k) = 0, \\
+    \sum_{k=1}^\infty \alpha(k) = \infty, \\
+    \sum_{k=1}^{\infty} \alpha(k)^2 < \infty,
+\end{gather*}
+as requested in the standard dual subgradient method. This process is repeated until the dual subgradient method achieves asymptotic convergence.

@@ -1,0 +1,6 @@
+\section{Centralized approach}
+Consider a set of $m$ PEVs (each with its own specifications) and a MPC prediction horizon of $N = t_f - t_0 + 1$ time steps of duration equal to $T$. The centralized approach consists in computing the optimal charging/discharging schedule for each PEV $p$ at each time step over the prediction horizon, meeting the preferences of the PEV drivers regarding charging time and final state of charge. It is crucial to ensure that the combined power drawn adheres to specified limits and follows a designated pattern, usually calculated to optimize the influence of recharging activities on the electrical grid.
+Figure \ref{fig:cen_scheme} shows the block scheme of the centralized approach.
+\input{figures/cen_scheme.tex}
+\input{sections/cen_problem.tex}
+\input{sections/cen_solution.tex}

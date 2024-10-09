@@ -1,0 +1,24 @@
+\section{Introduction}
+Mixed-integer linear programming (MILP) problems are a class of optimization problems, pivotal in various fields due to their ability to model complex decision-making scenarios, characterized by linear relationships involving both continuous and integer variables. \\
+These typically involve maximizing or minimizing a linear objective function subject to a set of linear constraints. The presence of integer variables makes the problem particularly challenging to solve, often requiring sophisticated algorithms like branch-and-bound, branch-and-cut, and cutting plane methods.
+
+This document aims to provide a comprehensive review of the solution methods for MILP problems in a decentralized setting, meaning that the optimization problem is solved collaboratively by multiple agents, each controlling a subset of the decision variables. \\
+In order to provide a clear understanding of the problem, we first present it in a general form and explain how it can be solved in a centralized way. Then, we go through the evolution of the decentralized solutions proposed by the literature and discuss the pros and cons of each method.
+
+Alongside the theoretical aspects, we carry forward a case study regarding the decentralized control of the charging process of a large fleet of plug-in electric vehicles (PEVs) in a smart grid environment using the approach proposed by Manieri et al.\supercite{manieri} in 2023. This study will help to understand the practical implications of the decentralized solution methods and the challenges faced in real-world applications.
+
+\subsection{Problem formulation}
+A general form of MILP problem is the following:
+\begin{align*}
+    \min_{v_1, \dots, v_m} &\sum_{p=1}^{m} c_p^T v_p \\
+    \text{subject to: } &\sum_{p=1}^{m} A_p v_p \leq b \tag{$\mathcal{P}$} \label{eq:MILP} \\
+    & v_p \in V_p, \quad p = 1, \dots, m.
+\end{align*}
+Here, $b \in \mathbb{R}^{\beta}$ is called the \textit{resource array}, and $V_p = \left\{ v_p \in \mathbb{R}^{n_{c, p}} \times \mathbb{Z}^{n_{d, p}} \; s.t. \; D_p v_p \leq d_p\right\}$ are the \textit{subsystems}. We further assume that the total number of subsystems is finite and greater than the length of the resource array. \\
+Problem $\mathcal{P}$ is capable of modeling any scenario for which a large number of subproblems, each with its own domain $V_p$ possibly including integer variables, are coupled through globally-valid constraints of the form $\sum_{p=1}^{m} A_p v_p \leq b$. The latter are introduced in order to limit the available resources to be shared among the subsystems\supercite{vujanic}.
+
+\subsection{Centralized solution}
+The centralized solution to problem \ref{eq:MILP} consists of solving the problem as a whole, i.e., compute within a central entity the optimal solution with respect to the cost function by considering all the decision variables $v_1, ..., v_m$ simultaneously, with each of these entailing a set of local constraints to satisfy besides the global ones. \\
+Since a closed form solution to this problem is generally not available, the most common way to solve it is by relaxing the integer constraints and solving the resulting linear programming (LP) problem, which means temporarily ignoring the integer constraints and allowing all variables to be continuous. This is known as the \textit{linear relaxation} of the MILP problem. Then, the solution can be refined by using branch-and-bound algorithms, cutting plane methods, and heuristics to find the best integer-feasible solution.
+
+An issue with this approach is that it requires a central entity to have access to all the decision variables, which might not be feasible in practice due to privacy concerns, communication constraints, or computational limitations. Moreover, centralized solutions often struggle with scalability as the size of the problem increases, requiring significant memory and processing power that may exceed the capabilities of a single central processor. For these reasons, decentralized solutions have been proposed as an alternative to the centralized approach.

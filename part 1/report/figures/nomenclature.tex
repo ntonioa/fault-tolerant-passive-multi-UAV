@@ -1,0 +1,44 @@
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|p{0.7\columnwidth}|}
+        \hline
+        Symbol & Explanation \\
+        \hline
+        \(m\) & Number of PEVs. \\
+        \(N\) & MPC prediction horizon. \\
+        \(t_f\) & Final instant of the problem. \\
+        \(t_0\) & Initial instant of the problem. \\
+        \(T\) & Sampling time. \\
+        \(p\) & Index to denote a generic PEV. \\
+        \(i\) & Index to denote a generic time. \\
+        \(P_{p,i}\) & Charging/discharging power of PEV $p$ at time $i$. \\
+        \(P^{ch}_{p,i}\) & Charging power of PEV $p$ at time $i$. \\
+        \(P^{dis}_{p,i}\) & Discharging power of PEV $p$ at time $i$. \\
+        \(P^{ch,min}_p\) & Minimum charging power of PEV $p$. \\
+        \(P^{ch,max}_p\) & Maximum charging power of PEV $p$. \\
+        \(P^{dis,min}_p\) & Minimum discharging power of PEV $p$. \\
+        \(P^{dis,max}_p\) & Maximum discharging power of PEV $p$. \\
+        \(\delta^{ch}_{p,i}\) & $\in \{0, 1\}.$ 1 if PEV $p$ is charging at time $i$, 0 otherwise. \\
+        \(\delta^{dis}_{p,i}\) & $\in \{0, 1\}.$ 1 if PEV $p$ is discharging at time $i$, 0 otherwise. \\
+        \(P_i\) & Aggregated power at time $i$. \\
+        \(P^{max}_i\) & Maximum aggregated power at time $i$. \\
+        \(x_{p,i}\) & State of charge of PEV $p$ at time $i$. \\
+        \((x_0)_p\) & Initial state of charge of PEV $p$. \\
+        \(\eta^{ch}_p\) & $\in (0, 1).$ Charging efficiency of PEV $p$. \\
+        \(\eta^{dis}_p\) & $\in (0, 1).$ Discharging efficiency of PEV $p$. \\
+        \(F_p\) & Desired charging end instant of PEV $p$. \\
+        \(x^{ref}_p\) & $= x_{p, F_p}.$ Desired final state of charge of PEV $p$. \\
+        \(x^{max_p}\) & Maximum state of charge of PEV $p$. \\
+        \(x^{min_p}\) & Minimum state of charge of PEV $p$. \\
+        \(P^{ref}_i\) & Reference aggregated power at time $i$. \\
+        \(V\) & Objective function to minimize. \\
+        \(t_i\) & Auxiliary variable to linearize the objective function. \\
+        \(\xi_{p,i}\) & Perturbation term in the objective function. \\
+        \(\lambda, \mu, \nu\) & Lagrange multipliers. \\
+        \(\overline{s}_p\, \underline{s}_p\) & Auxiliary variables to compute the virtual price term. \\
+        \(\rho\) & Virtual price term \\
+        \hline
+    \end{tabular}
+    \caption{Nomenclature used in the term paper.}
+    \label{tab:nomenclature}
+\end{table}

@@ -1,0 +1,47 @@
+\documentclass{article}
+\usepackage{multicol}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage[sorting=none]{biblatex}
+\usepackage{titlesec}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bbm}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+
+\addbibresource{references.bib}
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+\numberwithin{equation}{section}
+\geometry{margin=0.95in}
+% \titleformat{\section}{\large\bfseries\scshape}{\thesection}{1em}{}
+% \titleformat{\subsection}{\normalfont\bfseries\scshape}{\thesubsection}{1em}{}
+% \titleformat{\subsubsection}{\small\bfseries\scshape}{\thesubsubsection}{1em}{}
+
+\title{\large Course of Control of Autonomous Multi-agent Systems \\ \LARGE A survey about decentralized control of PEV recharge}
+\author{Dumitru Demerji \\2073949
+\and Simone Orelli\\1749732 
+\and Antonio Rapuano\\2044902 \and \textit{DIAG Department}\\ \textit{University of Rome “La Sapienza”}\\ $[$surname$]$.$[$id number$]$@studenti.uniroma1.it}
+\date{May 2024}
+
+\begin{document}
+    \maketitle
+    \thispagestyle{empty}
+    \begin{multicols}{2}
+        \input{sections/abstract.tex}
+        \vfill\null
+        \columnbreak
+        \tableofcontents
+
+        \newpage
+        \pagenumbering{arabic}
+        \input{sections/introduction.tex}
+        \input{sections/evolution.tex}
+        \input{sections/manieri.tex}
+        \input{sections/conclusions.tex}
+        \printbibliography
+    \end{multicols}
+\end{document}

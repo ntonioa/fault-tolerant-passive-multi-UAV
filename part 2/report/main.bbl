@@ -1,0 +1,249 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{manieri}{article}{}
+      \name{author}{3}{}{%
+        {{hash=d29f67f4342d3508038d0522471bc8fa}{%
+           family={Manieri},
+           familyi={M\bibinitperiod},
+           given={Lucrezia},
+           giveni={L\bibinitperiod}}}%
+        {{hash=12399bf0c8fd1fc8228e6d006b1cf923}{%
+           family={Falsone},
+           familyi={F\bibinitperiod},
+           given={Alessandro},
+           giveni={A\bibinitperiod}}}%
+        {{hash=20f1cc91cd7ab46e62ecf306c6b5b0ff}{%
+           family={Prandini},
+           familyi={P\bibinitperiod},
+           given={Maria},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{6d3525fd969c2161db8ffc3c397ea8a2}
+      \strng{fullhash}{6d3525fd969c2161db8ffc3c397ea8a2}
+      \strng{bibnamehash}{6d3525fd969c2161db8ffc3c397ea8a2}
+      \strng{authorbibnamehash}{6d3525fd969c2161db8ffc3c397ea8a2}
+      \strng{authornamehash}{6d3525fd969c2161db8ffc3c397ea8a2}
+      \strng{authorfullhash}{6d3525fd969c2161db8ffc3c397ea8a2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We address the optimal operation of a large-scale multi-agent system where agents have to set their own continuous and/or discrete decision variables so as to jointly minimize the sum of local linear performance indices while satisfying local and global linear constraints. When the number of discrete decision variables is large, solving the resulting Mixed Integer Linear Program becomes computationally demanding, and often impossible in practice. Inspired by some recent methods in the literature, we propose a decentralized iterative scheme that recovers computational tractability by decomposing the dual of the MILP problem into lower-dimensional MILPs, one per agent, and obtains feasibility of the recovered primal solution by introducing a fictitious tightening of the global constraints. The tightening is updated in an adaptive fashion according to an heuristic strategy which allows it to both increase and decrease throughout the iterations, depending on the mismatch between the recovered mixed-integer primal solution and the solution to the relaxed linear problem associated with the current tightening. The procedure is shown to be effective and to outperform state-of-the-art alternative resolution schemes in a benchmark example on optimal charging of a fleet of electric vehicles.}
+      \field{issn}{2405-8963}
+      \field{journaltitle}{IFAC-PapersOnLine}
+      \field{note}{22nd IFAC World Congress}
+      \field{number}{2}
+      \field{title}{A novel decentralized approach to large-scale multi-agent MILPs}
+      \field{volume}{56}
+      \field{year}{2023}
+      \field{pages}{5919\bibrangedash 5924}
+      \range{pages}{6}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.ifacol.2023.10.616
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S2405896323009874
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S2405896323009874
+      \endverb
+      \keyw{MILP,large-scale systems decentralized optimization,multi-agent systems}
+    \endentry
+    \entry{vujanic}{article}{}
+      \name{author}{5}{}{%
+        {{hash=af1d7629f9f0970ae177a39671216fd2}{%
+           family={Vujanic},
+           familyi={V\bibinitperiod},
+           given={Robin},
+           giveni={R\bibinitperiod}}}%
+        {{hash=03151242ddf2e2ceceaf499207effdea}{%
+           family={Esfahani},
+           familyi={E\bibinitperiod},
+           given={Peyman},
+           giveni={P\bibinitperiod}}}%
+        {{hash=7a1852344415c025177393869723c8f5}{%
+           family={Goulart},
+           familyi={G\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod}}}%
+        {{hash=2824d1c1d17d33c07dca5f988d21d8d8}{%
+           family={Mariethoz},
+           familyi={M\bibinitperiod},
+           given={Sebastien},
+           giveni={S\bibinitperiod}}}%
+        {{hash=b2bb39eb75a828fec1d25d655c9d7372}{%
+           family={Morari},
+           familyi={M\bibinitperiod},
+           given={Manfred},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{dfc0595a12171bf4877aed79882e8723}
+      \strng{fullhash}{ebb05e1b37a6e513cc54f7859d714572}
+      \strng{bibnamehash}{dfc0595a12171bf4877aed79882e8723}
+      \strng{authorbibnamehash}{dfc0595a12171bf4877aed79882e8723}
+      \strng{authornamehash}{dfc0595a12171bf4877aed79882e8723}
+      \strng{authorfullhash}{ebb05e1b37a6e513cc54f7859d714572}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Automatica}
+      \field{month}{11}
+      \field{title}{A Decomposition Method for Large Scale MILPs, with Performance Guarantees and a Power System Application}
+      \field{volume}{67}
+      \field{year}{2014}
+      \verb{doi}
+      \verb 10.1016/j.automatica.2016.01.006
+      \endverb
+    \endentry
+    \entry{alpha}{article}{}
+      \name{author}{2}{}{%
+        {{hash=163566b92b332258782e61e3d217a2bb}{%
+           family={Robbins},
+           familyi={R\bibinitperiod},
+           given={Herbert},
+           giveni={H\bibinitperiod}}}%
+        {{hash=95751f7f614bc2af42f1a078b3e2ba61}{%
+           family={Monro},
+           familyi={M\bibinitperiod},
+           given={Sutton},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Institute of Mathematical Statistics}%
+      }
+      \strng{namehash}{5d85b58c5cbfcc8fc266cf4f5f6fbdbb}
+      \strng{fullhash}{5d85b58c5cbfcc8fc266cf4f5f6fbdbb}
+      \strng{bibnamehash}{5d85b58c5cbfcc8fc266cf4f5f6fbdbb}
+      \strng{authorbibnamehash}{5d85b58c5cbfcc8fc266cf4f5f6fbdbb}
+      \strng{authornamehash}{5d85b58c5cbfcc8fc266cf4f5f6fbdbb}
+      \strng{authorfullhash}{5d85b58c5cbfcc8fc266cf4f5f6fbdbb}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Annals of Mathematical Statistics}
+      \field{number}{3}
+      \field{title}{A Stochastic Approximation Method}
+      \field{volume}{22}
+      \field{year}{1951}
+      \field{pages}{400\bibrangedash 407}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1214/aoms/1177729586
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1214/aoms/1177729586
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1214/aoms/1177729586
+      \endverb
+    \endentry
+    \entry{falsone}{article}{}
+      \name{author}{3}{}{%
+        {{hash=12399bf0c8fd1fc8228e6d006b1cf923}{%
+           family={Falsone},
+           familyi={F\bibinitperiod},
+           given={Alessandro},
+           giveni={A\bibinitperiod}}}%
+        {{hash=f4dfa8378f9dfc6446ba223082d5f25a}{%
+           family={Margellos},
+           familyi={M\bibinitperiod},
+           given={Kostas},
+           giveni={K\bibinitperiod}}}%
+        {{hash=20f1cc91cd7ab46e62ecf306c6b5b0ff}{%
+           family={Prandini},
+           familyi={P\bibinitperiod},
+           given={Maria},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{5f953427fd24e84792a6c0237330938f}
+      \strng{fullhash}{5f953427fd24e84792a6c0237330938f}
+      \strng{bibnamehash}{5f953427fd24e84792a6c0237330938f}
+      \strng{authorbibnamehash}{5f953427fd24e84792a6c0237330938f}
+      \strng{authornamehash}{5f953427fd24e84792a6c0237330938f}
+      \strng{authorfullhash}{5f953427fd24e84792a6c0237330938f}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We address the optimization of a large scale multi-agent system where each agent has discrete and/or continuous decision variables that need to be set so as to optimize the sum of linear local cost functions, in presence of linear local and global constraints. The problem reduces to a Mixed Integer Linear Program (MILP) that is here addressed according to a decentralized iterative scheme based on dual decomposition, where each agent determines its decision vector by solving a smaller MILP involving its local cost function and constraint given some dual variable, whereas a central unit enforces the global coupling constraint by updating the dual variable based on the tentative primal solutions of all agents. An appropriate tightening of the coupling constraint through iterations allows to obtain a solution that is feasible for the original MILP. The proposed approach is inspired by a recent paper to the MILP approximate solution via dual decomposition and constraint tightening, but shows finite-time convergence to a feasible solution and provides sharper performance guarantees by means of an adaptive tightening. The two approaches are compared on a plug-in electric vehicles optimal charging problem.}
+      \field{issn}{0005-1098}
+      \field{journaltitle}{Automatica}
+      \field{title}{A decentralized approach to multi-agent MILPs: Finite-time feasibility and performance guarantees}
+      \field{volume}{103}
+      \field{year}{2019}
+      \field{pages}{141\bibrangedash 150}
+      \range{pages}{10}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.automatica.2019.01.009
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0005109819300093
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0005109819300093
+      \endverb
+      \keyw{MILP,Decentralized optimization,Multi-agent networks,Electric vehicles}
+    \endentry
+    \entry{liberati}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=780df1bfbee0cd29d5101a4d5bbb44c1}{%
+           family={Liberati},
+           familyi={L\bibinitperiod},
+           given={Francesco},
+           giveni={F\bibinitperiod}}}%
+        {{hash=098cd46f31931c23b5d563098be679a5}{%
+           family={Barcellona},
+           familyi={B\bibinitperiod},
+           given={Simone},
+           giveni={S\bibinitperiod}}}%
+        {{hash=dd0a8ca60efab289b06a0770d4e99618}{%
+           family={Di\bibnamedelima Giorgio},
+           familyi={D\bibinitperiod\bibinitdelim G\bibinitperiod},
+           given={Alessandro},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{688124f41727504ce533a3b3d9d764e8}
+      \strng{fullhash}{688124f41727504ce533a3b3d9d764e8}
+      \strng{bibnamehash}{688124f41727504ce533a3b3d9d764e8}
+      \strng{authorbibnamehash}{688124f41727504ce533a3b3d9d764e8}
+      \strng{authornamehash}{688124f41727504ce533a3b3d9d764e8}
+      \strng{authorfullhash}{688124f41727504ce533a3b3d9d764e8}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2023 IEEE International Conference on Environment and Electrical Engineering and 2023 IEEE Industrial and Commercial Power Systems Europe (EEEIC / I-CPS Europe)}
+      \field{title}{Decentralized PEV Control Based on a Subgradient Method for Mixed-Integer Programming Problems}
+      \field{year}{2023}
+      \field{pages}{1\bibrangedash 6}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/EEEIC/ICPSEurope57605.2023.10194623
+      \endverb
+      \keyw{Plug-in electric vehicles;Couplings;Simulation;Tariffs;Programming;Mathematical models;State of charge;smart charging;distributed MILP}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

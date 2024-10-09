@@ -1,0 +1,24 @@
+\subsection{Solution algorithm}
+\begin{algorithm}[H]
+    \caption{Centralized algorithm.}
+    \label{algo:cen}
+    \SetKwInOut{Input}{Input}
+    \SetKwInOut{Output}{Output}
+
+    \Input{$\Big\{N, T, m, (P^{max}_i, P^{ref}_i)_{i=1}^N, (P^{ch,max}_p,$
+    $ P^{ch,min}_p, P^{dis,max}_p, P^{dis,min}_p, \eta^{ch}_p, \eta^{dis}_p,$
+    $(x_0)_p, x^{max}_p, x^{min}_p, x^{ref}_p, F_p)_{p=1}^m,$ 
+    $(\xi_{p,i})_{i,p=1}^{N,m}\Big\}$}
+    \Output{$\Big\{(P^{ch}_{p,i}, P^{dis}_{p,i})_{i,p=1}^{N,m}\Big\}$}
+    
+    \BlankLine
+    \tcp{Solve the optimization problem}
+    \vspace*{-0.4cm}
+    $$\begin{bmatrix}
+            P^{ch}\\
+            P^{dis} 
+        \end{bmatrix}
+        = \argmin_{P^{ch}, P^{dis}} \sum_{i=1}^{N} (t_i + \sum_{p=1}^m P_{p,i} \xi_{p,i}) $$
+        $$s.t. \quad (\ref{constr:c1})-(\ref{constr:c10}), (\ref{constr:c13}), (\ref{constr:c14})$$
+\end{algorithm}
+    \noindent Notice the large quantity of variables and constraints that the central controller has to deal with. 

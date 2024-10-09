@@ -1,0 +1,5 @@
+\section{Decentralized approach}
+The decentralized approach involves the central controller and vehicles collaborating iteratively to find a common solution that meets both local and global constraints and objectives. At each iteration, a tentative charging schedule is computed by each PEV (solving a local optimization problem) and subsequently sent to the main controller. The controller collects the latter and imposes a new set of Lagrange multipliers to the PEVs, corresponding to an updated penalization term for the inner cost functions (see Subsection \ref{sec:dec_problem}). These new multipliers influence the next local tentative charging schedules, and the process iterates until a stop criterion is met. The decentralized approach is summarized in Figure \ref{fig:dec_scheme} (where the iteration process described above is enclosed in the \textit{Fast closed loop}).
+\input{figures/dec_scheme.tex}
+\input{sections/dec_problem.tex}
+\input{sections/dec_solution.tex}

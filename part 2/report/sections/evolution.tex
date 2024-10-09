@@ -1,0 +1,22 @@
+\section{Evolution of decentralized solutions}
+The decentralized approach aims to distribute the computational burden among multiple agents and reduce the communication overhead. The idea is to divide the whole problem into $m$ sub-problems that can be solved by $m$ separate agents.  Unfortunately, the presence of the global constraints is a clear hindrance. \\
+A plausible solution is to introduce an array $\lambda$, having same dimension as $b$, of non-negative Lagrange multipliers to dualize the global constraints. This allows us to formulate the following dual problem of \ref{eq:MILP}:
+\begin{align*}
+    \max_{\lambda \geq 0} \left\{ -\lambda^T b + \sum_{p=1}^{m} \min_{v_p \in V_p} \left\{ (c_p^T + \lambda^T A_p) v_p \right\} \right\}. \tag{$\mathcal{D}$} \label{eq:dual}
+\end{align*}
+The latter is composed of $m$ subproblems, called \textit{inner problems}, defined as:
+\begin{align}
+    \min_{v_p \in V_p} \left\{ (c_p^T + \lambda^T A_p) v_p \right\}, \quad p = 1, ..., m. \tag{$\mathcal{I}$} \label{eq:inner}
+\end{align}
+The optimal solution $\lambda^*$ of \ref{eq:dual} can be used to solve the inner problem for each agent $p = 1, 2, \dots, m$, and it can be found through a decentralized version of the sub-gradient iterative algorithm, based on the following update law:
+\begin{align}
+    \lambda(k+1) = \left[\lambda(k) + \alpha(k) \left(\sum_{p=1}^m A_p v_p (\lambda(k)) - b\right)\right]_+, \label{eq:lambda}
+\end{align}
+where the operator $[\cdot]_+$ is equivalent to $\max\{0,\cdot\}$ and ensures the non-negativity of $\lambda$, $v_p (\lambda(k))$ is the solution of \ref{eq:inner} with $\lambda = \lambda(k)$, and the step-size $\alpha(k)$ is chosen according to the Robbins-Monro conditions\supercite{alpha}.\\
+However, this approach only penalizes without fully preventing the violation of the global constraints of \ref{eq:MILP}. Therefore the corresponding primal solution $v(\lambda^*) = \begin{bmatrix}
+        v_1(\lambda^*) & v_2(\lambda^*) & \dots & v_m(\lambda^*)
+    \end{bmatrix}$ may not be feasible (nor is it possible to recover feasibility through the standard procedures\supercite{falsone}).\\
+
+\input{sections/vujanic.tex}
+\input{sections/falsone.tex}
+\input{sections/liberati.tex}

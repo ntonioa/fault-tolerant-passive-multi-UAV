@@ -1,0 +1,39 @@
+\subsection{Shared resources restriction}
+%\subsubsection{Duality for problem \ref{eq:MILP}}
+Vujanic et al. (2014)\supercite{vujanic} further explores the properties of the solutions of \ref{eq:inner}. One of the main results therein introduced is that the larger the number of agents $m$, the lower the duality gap between \ref{eq:MILP} and \ref{eq:dual}:
+\begin{align*}
+    \lim_{m \to \infty} \frac{J^*_{\mathcal{D}}}{J^*_{\mathcal{P}}} = 1.
+\end{align*}
+A particular case occurs when considering the linear program corresponding to the relaxation of \ref{eq:MILP}:
+\begin{align*}
+    \min_{v_1, \dots, v_m} & \sum_{p=1}^{m} c_p^T v_p                                             \\
+    \text{subject to: }    & \sum_{p=1}^{m} A_p v_p \leq b \tag{$\mathcal{P}_{LP}$} \label{eq:LP} \\
+                           & v_p \in \text{conv}(V_p), \quad p = 1, \dots, m,
+\end{align*}
+with $\text{conv}(V_p)$ being the convex hull of $V_p$, and where $J_{\mathcal{P}_{LP}}^* = J_{\mathcal{D}}^*$. Anyway, assuming that the solutions of \ref{eq:dual} and \ref{eq:LP}, respectively $\lambda^*$ and $x^*_{LP}$, are unique, they differ in at most $\beta$ subsystems. Since $x^*_{LP}$ is feasible with respect to the global constraints and provides a good objective value, it is expected that $x(\lambda^*)$ is "almost" feasible with a satisfactory cost. Note that $x_{LP}^*$ cannot be computed directly because there is no explicit description of $\text{conv}(V_p)$.
+
+%\subsubsection{A distributed solution method for \ref{eq:MILP}}
+Therefore, the proposed method consists in contracting the resource array $b$ through a virtual price $\rho \in \mathbb{R}^{\beta}$. We get the following modified version of \ref{eq:MILP}:
+\begin{align*}
+    \min_{v_1, \dots, v_m} & \sum_{p=1}^{m} c_p^T v_p                                                     \\
+    \text{subject to: }    & \sum_{p=1}^{m} A_p v_p \leq b -\rho \tag{$\bar{\mathcal{P}}$} \label{eq:BAR} \\
+                           & v_p \in V_p, \quad p = 1, \dots, m,
+\end{align*}
+where $\rho$ is computed as:
+\begin{align}
+    \rho = \beta\cdot\max_{p} \left\{\max_{v_p \in V_p}A_p v_p - \min_{v_p \in V_p}A_p v_p \right\}; \label{eq:rho_vuj}
+\end{align}
+here, the $\max$ operator has to be applied component-wise.\\
+Accordingly, the problems $\bar{\mathcal{P}}_{LP}$ and $\bar{\mathcal{D}}$ are introduced, defined similarly to \ref{eq:LP} and \ref{eq:dual} with the resource vector $b$ replaced by $\bar{b}\doteq b - \rho$. The fundamental result is that, if $\bar{\mathcal{P}}_{LP}$ and $\bar{\mathcal{D}}$ have unique solutions, then any selection $x(\bar{\lambda}^*)$ is feasible for \ref{eq:MILP}, where $\bar{\lambda}^*$ is the optimal solution of $\bar{\mathcal{D}}$. This means that for the problem to remain feasible after the contraction, the available resources must be sufficient.\\
+In conclusion, it is established that the primal solutions obtained from the dual of \ref{eq:BAR} are feasible for \ref{eq:MILP}, with:
+\begin{align}
+    \lim_{m \to \infty} \frac{J^*_{\bar{\mathcal{P}}}}{J^*_{\mathcal{P}}} = 1, \label{eq:ratio}
+\end{align}
+holding under the assumption that $V_p$ are uniformly bounded and $J^*_{\mathcal{P}}$ grows linearly in terms of $m$.
+
+\subsubsection{Application example}
+Consider the following scenario: a fleet of PEVs are connected to a charging station, and the charging stations are linked to a central controller, which is responsible for managing the charging process. The controller has to decide the charging rate of each vehicle, taking into account their charging requirements and the power limits of the grid connection. The goal is to minimize the total charging cost satisfying the aggregated power constraint (i.e., the maximum value for the total power withdrawn from the grid), while ensuring that the charging process is completed according to the preferences of each driver, expressed in terms of final state of charge and charging time. \\
+Typically, the problem is addressed with Model Predictive Control (MPC) techniques, which are well suited for the management of complex systems with multiple constraints.
+
+Vujanic et al. (2014)\supercite{vujanic} validates the presented work by adapting the decentralized procedure to the problem at hand. This is justified by the fact that, since the fleet is large, a centralized approach is not suitable due to the heavy computational burden. Moreover, the latter would also require the communication of a considerable amount of private information about the PEVs, which, on the contrary, is not required by the decentralized approach.\\
+The results reported in the paper show that the proposed solution is, in general, considerably better than the centralized one. In particular, the higher the number of PEVs, the more appreciable the difference between the computation times of the two approaches becomes. A further notable result is the experimental demonstration of \ref{eq:ratio}. However, the tentative solutions, as expected, do not immediately satisfy the global constraint, but there is a need to wait for a fair number of iterations.
